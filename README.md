@@ -1,28 +1,35 @@
 # Deploy Doctor
 
-Validacao automatica de saude tecnica pos deploy.
+Produto real da DouglasDev para operacao de checagens com painel interativo full stack.
 
-## Problema
-Deploys sobem sem checklist tecnico completo.
+## O que este repositorio entrega
+- API Node/Express com validacao de entrada via Zod.
+- Persistencia local de dados em arquivo (modo desenvolvimento/producao).
+- Filtros reais por status, prioridade e busca textual.
+- Exportacao CSV para analise operacional.
+- Frontend React responsivo com feedback de carregamento/erro e interacoes completas.
 
-## Publico
-DevOps, backend e equipes de platform engineering.
+## Fluxo operacional
+1. Registrar checagem critica para o ambiente alvo.
+2. Executar validacao tecnica e anexar resultado.
+3. Concluir item e liberar proxima etapa de deploy.
 
-## MVP
-- Teste de dominio, DNS e certificado SSL.
-- Smoke de rotas e endpoints criticos.
-- Verificacao de headers de seguranca.
-- Relatorio consolidado por ambiente.
-
-## Stack
-- React + TypeScript + Vite
-- Node + Express + TypeScript
-- CI com lint/test/build/audit
+## Endpoints principais
+- `GET /health`
+- `GET /api/meta`
+- `GET /api/work-items`
+- `GET /api/work-items/export.csv`
+- `POST /api/work-items`
+- `PATCH /api/work-items/:id/toggle`
+- `DELETE /api/work-items/:id`
 
 ## Setup
-1. npm install --include=dev
-2. npm run bootstrap
-3. npm run dev
+1. `npm install --include=dev`
+2. `npm run bootstrap`
+3. `npm run dev`
 
-## Monetizacao
-Plano por execucao com monitoramento continuo.
+## Qualidade
+- `npm run quality` executa lint + testes + build no backend e frontend.
+
+## Marca
+DouglasDev
